@@ -1,0 +1,22 @@
+.home {
+  height: 100vh;
+  background: #111827;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.home h1 {
+  font-size: 4rem;
+}
+
+.home button {
+  padding: 20px 40px;
+  font-size: 2rem;
+  border-radius: 14px;
+  background: white;
+}
