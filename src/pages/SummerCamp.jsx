@@ -16,9 +16,15 @@ function SummerCamp() {
 
       <section className="campLayout">
         <div className="mediaPanel">
-          <div className="videoPlaceholder">
-            <span>Video / Photo Slideshow</span>
-          </div>
+          <video
+            className="campVideo"
+            src="https://res.cloudinary.com/dtsbqsk8c/video/upload/v1778334559/1._Main-revised_jrqmty.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+          />
 
           <p className="mediaCaption">
             See what a day at Energy Summer Camp looks like.
