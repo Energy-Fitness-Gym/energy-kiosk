@@ -23,7 +23,7 @@ function Home() {
 
           <button className="kioskButton" disabled>
             <span>Gymnastics</span>
-            <small>Coming Soon1</small>
+            <small>Coming Soon</small>
           </button>
         </div>
       </section>
