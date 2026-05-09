@@ -10,8 +10,6 @@ function Home() {
           src="https://res.cloudinary.com/dtsbqsk8c/image/upload/v1778287311/Logo_and_tag_line_-_oval_ssvbiw.png"
           alt="Energy Logo"
         />
-
-        <p className="subtitle">Tap to learn more</p>
       </section>
 
       <section className="buttonLayout">
@@ -29,6 +27,8 @@ function Home() {
           <small>Coming Soon</small>
         </div>
       </section>
+
+      <p className="subtitle">Tap to learn more</p>
     </main>
   );
 }

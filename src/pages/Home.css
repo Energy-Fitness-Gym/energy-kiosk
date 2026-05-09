@@ -3,8 +3,11 @@
   overflow: hidden;
 
   background:
-    radial-gradient(circle at top left, rgba(250, 204, 21, 0.18), transparent 35%),
-    linear-gradient(135deg, #0f172a, #111827 45%, #020617);
+    radial-gradient(ellipse 88% 78% at center, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.76) 32%, rgba(255, 255, 255, 0.18) 66%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(ellipse 118% 108% at top left, rgba(99, 193, 139, 0.86) 0%, rgba(99, 193, 139, 0.46) 42%, rgba(99, 193, 139, 0) 86%),
+    radial-gradient(ellipse 118% 108% at top right, rgba(3, 164, 225, 0.84) 0%, rgba(3, 164, 225, 0.44) 42%, rgba(3, 164, 225, 0) 86%),
+    radial-gradient(ellipse 118% 108% at bottom left, rgba(3, 121, 194, 0.84) 0%, rgba(3, 121, 194, 0.44) 42%, rgba(3, 121, 194, 0) 86%),
+    radial-gradient(ellipse 118% 108% at bottom right, rgba(179, 210, 53, 0.86) 0%, rgba(179, 210, 53, 0.46) 42%, rgba(179, 210, 53, 0) 86%);
 
   color: white;
 
@@ -36,12 +39,13 @@
   height: auto;
   object-fit: contain;
   display: block;
-  margin: 0 auto clamp(8px, 1.3dvh, 14px);
+  margin: 0 auto;
 }
 
 .subtitle {
+  color: #1e3a5f;
   font-size: clamp(0.78rem, 1.2dvw, 0.95rem);
-  opacity: 0.7;
+  font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
