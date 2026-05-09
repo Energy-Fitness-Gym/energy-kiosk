@@ -15,19 +15,19 @@ function Home() {
       </section>
 
       <section className="buttonLayout">
-        <button className="kioskButton" type="button" aria-disabled="true" tabIndex="-1">
+        <div className="kioskButton comingSoon">
           <span>Gymnastics</span>
           <small>Coming Soon</small>
-        </button>
+        </div>
 
         <Link to="/summercamp" className="kioskButton primary">
           Summer Camp
         </Link>
 
-        <button className="kioskButton" type="button" aria-disabled="true" tabIndex="-1">
+        <div className="kioskButton comingSoon">
           <span>Events</span>
           <small>Coming Soon</small>
-        </button>
+        </div>
       </section>
     </main>
   );
