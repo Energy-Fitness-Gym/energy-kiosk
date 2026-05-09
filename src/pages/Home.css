@@ -1,15 +1,21 @@
 .home {
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
+
   background:
     radial-gradient(circle at top left, rgba(250, 204, 21, 0.18), transparent 35%),
     linear-gradient(135deg, #0f172a, #111827 45%, #020617);
+
   color: white;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 56px;
-  padding: 48px;
+
+  gap: clamp(20px, 3vh, 56px);
+  padding: clamp(20px, 3vw, 48px);
+
   text-align: center;
 }
 
