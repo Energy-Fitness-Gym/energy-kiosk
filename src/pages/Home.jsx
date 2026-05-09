@@ -15,7 +15,7 @@ function Home() {
       </section>
 
       <section className="buttonLayout">
-        <Link to="/summercamp" className="kioskButton primary large">
+        <Link to="/summercamp" className="kioskButton primary">
           Summer Camp
         </Link>
 
