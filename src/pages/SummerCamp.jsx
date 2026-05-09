@@ -18,7 +18,7 @@ function SummerCamp() {
         <div className="mediaPanel">
           <video
             className="campVideo"
-            src="https://res.cloudinary.com/dtsbqsk8c/video/upload/v1778334559/1._Main-revised_jrqmty.mp4"
+            src="https://res.cloudinary.com/dtsbqsk8c/video/upload/v1778337252/1._Main-revised_noblackendcard_sjezu5.mp4"
             autoPlay
             muted
             loop
