@@ -15,22 +15,10 @@
   max-width: 900px;
 }
 
-.eyebrow {
-  font-size: 2rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  opacity: 0.8;
-}
-
-.hero h1 {
-  font-size: 7rem;
-  line-height: 1;
-  margin: 10px 0;
-}
-
 .subtitle {
-  font-size: 2rem;
-  opacity: 0.9;
+  font-size: 1.25rem;
+  opacity: 0.75;
+  letter-spacing: 0.08em;
 }
 
 .buttonLayout {

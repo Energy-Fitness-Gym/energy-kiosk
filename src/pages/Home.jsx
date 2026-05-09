@@ -10,9 +10,8 @@ function Home() {
           src="https://res.cloudinary.com/dtsbqsk8c/image/upload/v1778287311/Logo_and_tag_line_-_oval_ssvbiw.png"
           alt="Energy Logo"
         />
-        <p className="eyebrow">Welcome to</p>
-        <h1>Energy</h1>
-        <p className="subtitle">Tap below to learn more.</p>
+
+        <p className="subtitle">Tap to learn more</p>
       </section>
 
       <section className="buttonLayout">
