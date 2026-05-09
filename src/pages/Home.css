@@ -13,16 +13,17 @@
   justify-content: center;
   align-items: center;
 
-  gap: clamp(20px, 3vh, 56px);
-  padding: clamp(20px, 3vw, 48px);
+  gap: clamp(12px, 2dvh, 28px);
+  padding: clamp(12px, 2.2dvw, 28px);
 
   text-align: center;
 }
 
 .hero {
+  width: min(860px, 100%);
   max-width: 900px;
-  padding: 28px 40px;
-  border-radius: 32px;
+  padding: clamp(14px, 2dvh, 22px) clamp(18px, 3dvw, 32px);
+  border-radius: clamp(20px, 3dvw, 30px);
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
@@ -30,14 +31,16 @@
 }
 
 .logo {
-  width: 360px;
+  width: clamp(220px, 36dvw, 340px);
+  max-height: min(30dvh, 190px);
   height: auto;
+  object-fit: contain;
   display: block;
-  margin: 0 auto 18px;
+  margin: 0 auto clamp(8px, 1.3dvh, 14px);
 }
 
 .subtitle {
-  font-size: 1rem;
+  font-size: clamp(0.78rem, 1.2dvw, 0.95rem);
   opacity: 0.7;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -47,21 +50,21 @@
   width: min(980px, 100%);
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: clamp(12px, 2dvh, 18px);
 }
 
 .bottomButtons {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 22px;
+  gap: clamp(12px, 2dvw, 18px);
 }
 
 .kioskButton {
-  min-height: 118px;
-  border-radius: 30px;
+  min-height: clamp(82px, 14dvh, 108px);
+  border-radius: clamp(18px, 2.5dvw, 26px);
   background: rgba(255, 255, 255, 0.92);
   color: #0f172a;
-  font-size: 2rem;
+  font-size: clamp(1.35rem, 3dvw, 1.85rem);
   font-weight: 800;
   display: flex;
   flex-direction: column;
@@ -90,8 +93,28 @@
 }
 
 .kioskButton small {
-  font-size: 0.9rem;
+  font-size: clamp(0.68rem, 1.2dvw, 0.82rem);
   text-transform: uppercase;
   letter-spacing: 0.16em;
   opacity: 0.7;
+}
+
+@media (max-height: 680px) {
+  .home {
+    gap: 10px;
+    padding-block: 10px;
+  }
+
+  .hero {
+    padding-block: 12px;
+  }
+
+  .logo {
+    width: clamp(190px, 32dvw, 300px);
+    max-height: 26dvh;
+  }
+
+  .kioskButton {
+    min-height: clamp(72px, 13dvh, 94px);
+  }
 }
