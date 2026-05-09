@@ -44,12 +44,12 @@ function SummerCamp() {
 
           <Link to="/whattobring" className="infoCard infoCardLink">
             <h2>What to Bring</h2>
-            <p>Lunch, snack, water bottle, comfortable clothes, and more.</p>
+            <p>Click to see what campers should bring daily.</p>
           </Link>
 
           <div className="infoCard">
-            <h2>Ages & Hours</h2>
-            <p>Camp is for ages 3–9 and runs from 9 AM–3 PM.</p>
+            <h2>TBD</h2>
+            <p>TBD</p>
           </div>
 
           <div className="infoCard full">
