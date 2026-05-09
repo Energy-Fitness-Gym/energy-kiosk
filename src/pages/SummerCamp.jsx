@@ -37,10 +37,10 @@ function SummerCamp() {
             <p>See what your child can expect during a typical day at camp.</p>
           </Link>
 
-          <div className="infoCard">
+          <Link to="/faq" className="infoCard infoCardLink">
             <h2>FAQs</h2>
             <p>Answers to common parent questions about camp.</p>
-          </div>
+          </Link>
 
           <Link to="/whattobring" className="infoCard infoCardLink">
             <h2>What to Bring</h2>

@@ -1,0 +1,185 @@
+.faqPage {
+  --faq-pad-top: clamp(14px, 2dvw, 26px);
+  --faq-pad-bottom: clamp(18px, 3dvw, 42px);
+  --faq-header-space: clamp(110px, 13dvh, 156px);
+
+  height: 100dvh;
+  overflow: hidden;
+  padding: var(--faq-pad-top) clamp(18px, 3dvw, 42px) var(--faq-pad-bottom);
+  color: #0f172a;
+  background:
+    radial-gradient(circle at top left,
+      rgba(179, 210, 53, 0.30) 0%,
+      transparent 58%),
+    radial-gradient(circle at top right,
+      rgba(3, 164, 225, 0.28) 0%,
+      transparent 58%),
+    radial-gradient(circle at bottom left,
+      rgba(99, 193, 139, 0.24) 0%,
+      transparent 62%),
+    radial-gradient(circle at bottom right,
+      rgba(3, 121, 194, 0.30) 0%,
+      transparent 62%),
+    radial-gradient(circle at center,
+      rgba(255,255,255,0.34) 0%,
+      rgba(255,255,255,0.18) 38%,
+      rgba(255,255,255,0.06) 62%,
+      transparent 82%),
+    linear-gradient(
+      135deg,
+      #71877d 0%,
+      #8fa4a3 38%,
+      #7f9cb2 68%,
+      #4b7394 100%
+    );
+  display: flex;
+  flex-direction: column;
+}
+
+.faqHeader {
+  flex: 0 0 var(--faq-header-space);
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 3dvw, 34px);
+}
+
+.faqNav {
+  display: flex;
+  gap: 12px;
+}
+
+.faqButton {
+  background: rgba(255, 255, 255, 0.88);
+  color: #1e3a5f;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: clamp(0.9rem, 1.25dvw, 1.08rem);
+  padding: 12px 18px;
+  border-radius: 999px;
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.14);
+}
+
+.faqHeader h1 {
+  font-size: clamp(2.4rem, 5dvw, 5rem);
+  line-height: 0.95;
+  color: #0f172a;
+}
+
+.faqPanel {
+  max-height: calc(100dvh - var(--faq-pad-top) - var(--faq-pad-bottom) - var(--faq-header-space));
+  overflow-y: auto;
+  border-radius: clamp(28px, 3dvw, 40px);
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.16);
+  padding: clamp(12px, 1.6dvw, 22px);
+  scrollbar-gutter: stable;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1.2dvh, 14px);
+  scroll-padding-block: clamp(20px, 4dvh, 42px);
+}
+
+.faqCard {
+  flex: 0 0 auto;
+  width: 100%;
+  border-radius: clamp(18px, 2dvw, 26px);
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow:
+    0 14px 30px rgba(15, 23, 42, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.76);
+  transition: background 0.18s ease, box-shadow 0.18s ease;
+}
+
+.faqCard.isOpen {
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow:
+    0 18px 38px rgba(15, 23, 42, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.84);
+}
+
+.faqToggle {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  min-height: clamp(58px, 7dvh, 78px);
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: clamp(14px, 2dvw, 24px);
+  padding: clamp(11px, 1.4dvw, 17px);
+  text-align: left;
+}
+
+.faqQuestion {
+  min-width: 0;
+  color: #1e3a5f;
+  font-size: clamp(1.14rem, 1.8dvw, 1.64rem);
+  font-weight: 900;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.faqIcon {
+  width: clamp(24px, 2.6dvw, 34px);
+  height: clamp(24px, 2.6dvw, 34px);
+  color: #0379c2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1.45rem, 2.35dvw, 1.95rem);
+  font-weight: 300;
+  line-height: 1;
+  transform: rotate(0deg);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.faqCard.isOpen .faqIcon {
+  transform: rotate(180deg);
+}
+
+.faqAnswer {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 0.23s ease, opacity 0.2s ease;
+}
+
+.faqCard.isOpen .faqAnswer {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.faqAnswer p {
+  min-height: 0;
+  overflow: hidden;
+  color: #475569;
+  font-size: clamp(0.98rem, 1.35dvw, 1.16rem);
+  line-height: 1.35;
+  font-weight: 650;
+  margin: 0;
+  padding: 0 clamp(11px, 1.4dvw, 17px);
+}
+
+.faqCard.isOpen .faqAnswer p {
+  padding-bottom: clamp(12px, 1.5dvh, 18px);
+}
+
+@media (max-width: 760px) {
+  .faqPage {
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  .faqHeader {
+    flex-wrap: wrap;
+  }
+}
