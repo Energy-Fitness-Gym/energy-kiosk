@@ -38,14 +38,10 @@
 
 .whatToBringHeader {
   flex: 0 0 var(--bring-header-space);
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(120px, 1fr) auto minmax(120px, 1fr);
   align-items: center;
   gap: clamp(18px, 3dvw, 34px);
-}
-
-.whatToBringNav {
-  display: flex;
-  gap: 12px;
 }
 
 .whatToBringButton {
@@ -59,10 +55,19 @@
   box-shadow: 0 12px 24px rgba(15, 23, 42, 0.14);
 }
 
+.whatToBringBackButton {
+  justify-self: start;
+}
+
+.whatToBringHomeButton {
+  justify-self: end;
+}
+
 .whatToBringHeader h1 {
   font-size: clamp(2.4rem, 5dvw, 5rem);
   line-height: 0.95;
   color: #0f172a;
+  text-align: center;
 }
 
 .bringGrid {

@@ -88,7 +88,7 @@ const campFaqs = [
   {
     question: "How are campers grouped and coached?",
     answer:
-      "Campers are grouped primarily by age and then by skill level. If we are not yet familiar with your child’s gymnastics experience at the time of registration, we’ll assess and place them appropriately during their first day of camp.",
+      "Campers are grouped primarily by age and then by skill level to help create a fun, safe, and encouraging environment for everyone. If we are not yet familiar with your child’s gymnastics experience at the time of registration, our coaches will observe and appropriately place them during their first day of camp. We use our progressive gymnastics syllabus to help track development, build confidence, and ensure campers are learning through fun, safe, and appropriate progressions.",
   },
   {
     question: "Do campers go outside every day? What happens if it rains?",

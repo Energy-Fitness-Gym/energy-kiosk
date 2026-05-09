@@ -1,17 +1,25 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./SummerCamp.css";
 
 function SummerCamp() {
+  const navigate = useNavigate();
+
   return (
     <main className="campPage">
       <header className="campHeader">
-        <Link to="/" className="homeButton">
-          ← Home
-        </Link>
+        <button
+          className="homeButton campBackButton"
+          type="button"
+          onClick={() => navigate(-1)}
+        >
+          ← Back
+        </button>
 
-        <div>
-          <h1>A fun, active day your child will love!</h1>
-        </div>
+        <h1>A fun, active day your child will love!</h1>
+
+        <Link to="/" className="homeButton campHomeButton">
+          Home
+        </Link>
       </header>
 
       <section className="campLayout">
@@ -39,7 +47,7 @@ function SummerCamp() {
 
           <Link to="/faq" className="infoCard infoCardLink">
             <h2>FAQs</h2>
-            <p>Answers to common parent questions about camp.</p>
+            <p>Ages, grouping requests, shy campers, and more...</p>
           </Link>
 
           <Link to="/whattobring" className="infoCard infoCardLink">

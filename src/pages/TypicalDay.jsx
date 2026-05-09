@@ -1,11 +1,12 @@
 import { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import campSchedule from "../data/campSchedule";
 import "./TypicalDay.css";
 
 function TypicalDay() {
   const [openIndex, setOpenIndex] = useState(null);
   const itemRefs = useRef([]);
+  const navigate = useNavigate();
 
   const handleToggle = (index) => {
     const nextIndex = openIndex === index ? null : index;
@@ -24,18 +25,15 @@ function TypicalDay() {
   return (
     <main className="typicalDayPage">
       <header className="typicalDayHeader">
-        <div className="typicalDayNav">
-          <Link to="/" className="typicalDayButton">
-            ← Home
-          </Link>
-          <Link to="/summercamp" className="typicalDayButton">
-            Back
-          </Link>
-        </div>
+        <button className="typicalDayButton typicalDayBackButton" type="button" onClick={() => navigate(-1)}>
+          ← Back
+        </button>
 
-        <div>
-          <h1>Typical Camp Day</h1>
-        </div>
+        <h1>Typical Camp Day</h1>
+
+        <Link to="/" className="typicalDayButton typicalDayHomeButton">
+          Home
+        </Link>
       </header>
 
       <section className="schedulePanel" aria-label="Typical camp day schedule">

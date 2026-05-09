@@ -38,7 +38,8 @@
 
 .campHeader {
   flex: 0 0 var(--camp-header-space);
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(120px, 1fr) auto minmax(120px, 1fr);
   align-items: center;
   gap: clamp(16px, 2dvw, 24px);
   margin-bottom: 0;
@@ -55,9 +56,18 @@
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.14);
 }
 
+.campBackButton {
+  justify-self: start;
+}
+
+.campHomeButton {
+  justify-self: end;
+}
+
 .campHeader h1 {
-  font-size: clamp(2rem, 4dvw, 4rem);
+  font-size: clamp(1.8rem, 3.4dvw, 3.45rem);
   line-height: 1;
+  text-align: center;
 }
 
 .campLayout {

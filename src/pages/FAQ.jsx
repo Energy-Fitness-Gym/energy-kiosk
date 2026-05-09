@@ -1,11 +1,12 @@
 import { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import campFaqs from "../data/campFaqs.jsx";
 import "./FAQ.css";
 
 function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
   const itemRefs = useRef([]);
+  const navigate = useNavigate();
 
   const handleToggle = (index) => {
     const nextIndex = openIndex === index ? null : index;
@@ -24,16 +25,15 @@ function FAQ() {
   return (
     <main className="faqPage">
       <header className="faqHeader">
-        <div className="faqNav">
-          <Link to="/" className="faqButton">
-            ← Home
-          </Link>
-          <Link to="/summercamp" className="faqButton">
-            Back
-          </Link>
-        </div>
+        <button className="faqButton faqBackButton" type="button" onClick={() => navigate(-1)}>
+          ← Back
+        </button>
 
         <h1>Summer Camp FAQs</h1>
+
+        <Link to="/" className="faqButton faqHomeButton">
+          Home
+        </Link>
       </header>
 
       <section

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./WhatToBring.css";
 
 const allCampersItems = [
@@ -18,19 +18,20 @@ const fullDayItems = [
 ];
 
 function WhatToBring() {
+  const navigate = useNavigate();
+
   return (
     <main className="whatToBringPage">
       <header className="whatToBringHeader">
-        <div className="whatToBringNav">
-          <Link to="/" className="whatToBringButton">
-            ← Home
-          </Link>
-          <Link to="/summercamp" className="whatToBringButton">
-            Back
-          </Link>
-        </div>
+        <button className="whatToBringButton whatToBringBackButton" type="button" onClick={() => navigate(-1)}>
+          ← Back
+        </button>
 
         <h1>What to Bring</h1>
+
+        <Link to="/" className="whatToBringButton whatToBringHomeButton">
+          Home
+        </Link>
       </header>
 
       <section className="bringGrid" aria-label="Summer camp packing lists">
