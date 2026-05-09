@@ -1,10 +1,25 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import campSchedule from "../data/campSchedule";
 import "./TypicalDay.css";
 
 function TypicalDay() {
   const [openIndex, setOpenIndex] = useState(null);
+  const itemRefs = useRef([]);
+
+  const handleToggle = (index) => {
+    const nextIndex = openIndex === index ? null : index;
+    setOpenIndex(nextIndex);
+
+    if (nextIndex !== null) {
+      window.setTimeout(() => {
+        itemRefs.current[nextIndex]?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      }, 80);
+    }
+  };
 
   return (
     <main className="typicalDayPage">
@@ -30,13 +45,19 @@ function TypicalDay() {
             const detailsId = `schedule-details-${index}`;
 
             return (
-              <article className={`scheduleCard ${isOpen ? "isOpen" : ""}`} key={`${item.time}-${item.title}`}>
+              <article
+                className={`scheduleCard ${isOpen ? "isOpen" : ""}`}
+                key={`${item.time}-${item.title}`}
+                ref={(element) => {
+                  itemRefs.current[index] = element;
+                }}
+              >
                 <button
                   className="scheduleToggle"
                   type="button"
                   aria-expanded={isOpen}
                   aria-controls={detailsId}
-                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  onClick={() => handleToggle(index)}
                 >
                   <span className="scheduleTime">{item.time}</span>
                   <span className="scheduleTitle">{item.title}</span>
@@ -48,7 +69,7 @@ function TypicalDay() {
                 <div className="scheduleDetails" id={detailsId}>
                   <p>{item.description}</p>
                 </div>
-            </article>
+              </article>
             );
           })}
         </div>

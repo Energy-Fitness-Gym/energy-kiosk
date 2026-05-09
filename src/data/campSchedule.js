@@ -1,38 +1,37 @@
 const campSchedule = [
   {
-    time: "8:45 AM",
-    title: "Drop-Off",
-    description: "Campers arrive, get settled, and ease into the day with supervised welcome activities.",
+    time: "8:00 AM",
+    title: "Early Drop-Off",
+    description:
+      "Campers enjoy supervised open gym activities before the camp day begins.",
   },
+
   {
-    time: "9:15 AM",
-    title: "Gymnastics & Movement",
-    description: "Coaches lead age-appropriate tumbling, obstacle courses, stretching, and movement games.",
+    time: "9 AM – 12 PM",
+    title: "Morning Camp",
+    description:
+      "Campers start with warm-ups, group games, gymnastics rotations, snack, crafts and our inflatable WaCkY MaZe (when it rains), and outdoor activities like our inflatable slip * slide, beach volleyball, and soccer.",
   },
-  {
-    time: "10:30 AM",
-    title: "Snack & Craft",
-    description: "A quick break for snack, water, and a themed craft or creative project.",
-  },
-  {
-    time: "11:15 AM",
-    title: "Games",
-    description: "Group games, teamwork challenges, and active play keep campers moving and engaged.",
-  },
+
   {
     time: "12:00 PM",
-    title: "Lunch",
-    description: "Campers refuel with their packed lunch and enjoy a calmer midday break.",
+    title: "Lunch + Half Day Pick-Up",
+    description:
+      "Full Day and Extended Day campers refuel with lunch and outdoor time while Half Day campers prepare for pick-up.",
   },
+
   {
-    time: "12:45 PM",
-    title: "Theme Activities",
-    description: "Daily theme activities, special challenges, and hands-on fun round out the afternoon.",
+    time: "1 PM – 3 PM",
+    title: "Afternoon Camp",
+    description:
+      "Campers enjoy open gym, gymnastics rotations, group games, and end-of-day activities. On Fridays, campers participate in a individual or group Talent Show!",
   },
+
   {
-    time: "3:00 PM",
-    title: "Pick-Up",
-    description: "Campers pack up, wrap up the day, and get ready for parent pick-up.",
+    time: "3 PM – 5 PM",
+    title: "Extended Day",
+    description:
+      "Extended Day campers continue with supervised open gym, crafts, games, and additional activities until 5:00 PM.",
   },
 ];
 

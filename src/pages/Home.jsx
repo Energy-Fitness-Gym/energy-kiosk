@@ -15,7 +15,7 @@ function Home() {
       <section className="buttonLayout">
         <div className="kioskButton comingSoon">
           <span>Gymnastics</span>
-          <small>Coming Soon - Testing</small>
+          <small>Coming Soon</small>
         </div>
 
         <Link to="/summercamp" className="kioskButton primary">
