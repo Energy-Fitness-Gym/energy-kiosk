@@ -8,11 +8,30 @@
   padding: var(--camp-pad-top) clamp(18px, 3dvw, 42px) var(--camp-pad-bottom);
   color: #0f172a;
   background:
-    radial-gradient(circle at top left, #b3d235, transparent 34%),
-    radial-gradient(circle at top right, #03a4e1, transparent 34%),
-    radial-gradient(circle at bottom left, #63c18b, transparent 34%),
-    radial-gradient(circle at bottom right, #0379c2, transparent 34%),
-    radial-gradient(circle at center, #ffffff 0%, #eef7f8 34%, transparent 62%);
+    radial-gradient(circle at top left,
+      rgba(179, 210, 53, 0.30) 0%,
+      transparent 58%),
+    radial-gradient(circle at top right,
+      rgba(3, 164, 225, 0.28) 0%,
+      transparent 58%),
+    radial-gradient(circle at bottom left,
+      rgba(99, 193, 139, 0.24) 0%,
+      transparent 62%),
+    radial-gradient(circle at bottom right,
+      rgba(3, 121, 194, 0.30) 0%,
+      transparent 62%),
+    radial-gradient(circle at center,
+      rgba(255,255,255,0.34) 0%,
+      rgba(255,255,255,0.18) 38%,
+      rgba(255,255,255,0.06) 62%,
+      transparent 82%),
+    linear-gradient(
+      135deg,
+      #71877d 0%,
+      #8fa4a3 38%,
+      #7f9cb2 68%,
+      #4b7394 100%
+    );
   display: flex;
   flex-direction: column;
 }
@@ -126,6 +145,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.infoCardLink {
+  color: inherit;
+  text-decoration: none;
 }
 
 .infoCard h2 {

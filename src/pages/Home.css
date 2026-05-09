@@ -3,11 +3,35 @@
   overflow: hidden;
 
   background:
-    radial-gradient(ellipse 88% 78% at center, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.76) 32%, rgba(255, 255, 255, 0.18) 66%, rgba(255, 255, 255, 0) 100%),
-    radial-gradient(ellipse 118% 108% at top left, rgba(99, 193, 139, 0.86) 0%, rgba(99, 193, 139, 0.46) 42%, rgba(99, 193, 139, 0) 86%),
-    radial-gradient(ellipse 118% 108% at top right, rgba(3, 164, 225, 0.84) 0%, rgba(3, 164, 225, 0.44) 42%, rgba(3, 164, 225, 0) 86%),
-    radial-gradient(ellipse 118% 108% at bottom left, rgba(3, 121, 194, 0.84) 0%, rgba(3, 121, 194, 0.44) 42%, rgba(3, 121, 194, 0) 86%),
-    radial-gradient(ellipse 118% 108% at bottom right, rgba(179, 210, 53, 0.86) 0%, rgba(179, 210, 53, 0.46) 42%, rgba(179, 210, 53, 0) 86%);
+  radial-gradient(circle at top left,
+    rgba(179, 210, 53, 0.30) 0%,
+    transparent 58%),
+
+  radial-gradient(circle at top right,
+    rgba(3, 164, 225, 0.28) 0%,
+    transparent 58%),
+
+  radial-gradient(circle at bottom left,
+    rgba(99, 193, 139, 0.24) 0%,
+    transparent 62%),
+
+  radial-gradient(circle at bottom right,
+    rgba(3, 121, 194, 0.30) 0%,
+    transparent 62%),
+
+  radial-gradient(circle at center,
+    rgba(255,255,255,0.34) 0%,
+    rgba(255,255,255,0.18) 38%,
+    rgba(255,255,255,0.06) 62%,
+    transparent 82%),
+
+  linear-gradient(
+    135deg,
+    #71877d 0%,
+    #8fa4a3 38%,
+    #7f9cb2 68%,
+    #4b7394 100%
+  );
 
   color: white;
 
@@ -25,15 +49,11 @@
 .hero {
   width: fit-content;
   max-width: 92%;
-  padding: clamp(14px, 2.2dvh, 22px) clamp(18px, 3.2dvw, 30px);
-  margin-bottom: clamp(10px, 2dvh, 26px);
+  padding: clamp(10px, 1.7dvh, 18px) clamp(14px, 2.4dvw, 24px);
   border-radius: 50% / 50%;
-  background: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow:
-    0 30px 80px rgba(0, 0, 0, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.42),
-    inset 0 -18px 42px rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(14px);
 }
 
@@ -47,9 +67,8 @@
 }
 
 .subtitle {
-  color: #1e3a5f;
   font-size: clamp(0.78rem, 1.2dvw, 0.95rem);
-  font-weight: 800;
+  opacity: 0.7;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -100,7 +119,7 @@
 
 .kioskButton.comingSoon {
   opacity: 1;
-  pointer-events: none;
+  cursor: default;
 }
 
 .kioskButton small {
@@ -118,7 +137,6 @@
 
   .hero {
     padding-block: 12px;
-    margin-bottom: 8px;
   }
 
   .logo {

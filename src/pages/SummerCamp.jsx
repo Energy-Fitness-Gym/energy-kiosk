@@ -32,10 +32,10 @@ function SummerCamp() {
         </div>
 
         <div className="infoGrid">
-          <div className="infoCard">
+          <Link to="/typicalday" className="infoCard infoCardLink">
             <h2>Typical Day</h2>
             <p>See how the camp day is structured from drop-off to pick-up.</p>
-          </div>
+          </Link>
 
           <div className="infoCard">
             <h2>FAQs</h2>
