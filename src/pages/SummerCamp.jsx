@@ -1,39 +1,58 @@
 import { Link } from "react-router-dom";
+import "./SummerCamp.css";
 
 function SummerCamp() {
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        background: "#1f2937",
-        color: "white",
-        padding: "40px",
-        fontFamily: "Arial",
-      }}
-    >
-      <h1 style={{ fontSize: "4rem" }}>Energy Summer Camp</h1>
+    <main className="campPage">
+      <header className="campHeader">
+        <Link to="/" className="homeButton">
+          ← Home
+        </Link>
 
-      <p style={{ fontSize: "2rem" }}>Ages 3–9</p>
+        <div>
+          <h1>A fun, active day your child will love.</h1>
+        </div>
+      </header>
 
-      <p style={{ fontSize: "1.5rem" }}>
-        Games, obstacle courses, crafts, movement, and nonstop fun.
-      </p>
+      <section className="campLayout">
+        <div className="mediaPanel">
+          <div className="videoPlaceholder">
+            <span>Video / Photo Slideshow</span>
+          </div>
 
-      <Link to="/">
-        <button
-          style={{
-            marginTop: "40px",
-            padding: "15px 30px",
-            fontSize: "1.5rem",
-            borderRadius: "10px",
-            border: "none",
-            cursor: "pointer",
-          }}
-        >
-          Back Home
-        </button>
-      </Link>
-    </div>
+          <p className="mediaCaption">
+            See what a day at Energy Summer Camp looks like.
+          </p>
+        </div>
+
+        <div className="infoGrid">
+          <div className="infoCard">
+            <h2>Typical Day</h2>
+            <p>See how the camp day is structured from drop-off to pick-up.</p>
+          </div>
+
+          <div className="infoCard">
+            <h2>FAQs</h2>
+            <p>Answers to common parent questions about camp.</p>
+          </div>
+
+          <div className="infoCard">
+            <h2>What to Bring</h2>
+            <p>Lunch, snack, water bottle, comfortable clothes, and more.</p>
+          </div>
+
+          <div className="infoCard">
+            <h2>Ages & Hours</h2>
+            <p>Camp is for ages 3–9 and runs from 9 AM–3 PM.</p>
+          </div>
+
+          <div className="infoCard full">
+            <h2>Register</h2>
+            <p>Scan the QR code or ask the front desk for help signing up.</p>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
 
