@@ -23,13 +23,17 @@
 }
 
 .hero {
-  width: min(860px, 100%);
-  max-width: 900px;
-  padding: clamp(14px, 2dvh, 22px) clamp(18px, 3dvw, 32px);
-  border-radius: clamp(20px, 3dvw, 30px);
-  background: rgba(255, 255, 255, 0.04);
+  width: fit-content;
+  max-width: 92%;
+  padding: clamp(14px, 2.2dvh, 22px) clamp(18px, 3.2dvw, 30px);
+  margin-bottom: clamp(10px, 2dvh, 26px);
+  border-radius: 50% / 50%;
+  background: rgba(255, 255, 255, 0.16);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.42),
+    inset 0 -18px 42px rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(14px);
 }
 
@@ -114,6 +118,7 @@
 
   .hero {
     padding-block: 12px;
+    margin-bottom: 8px;
   }
 
   .logo {
