@@ -130,3 +130,24 @@
     grid-template-columns: 1fr;
   }
 }
+
+.kioskButton,
+.kioskButton:link,
+.kioskButton:visited,
+.kioskButton[aria-disabled="true"] {
+  background: linear-gradient(135deg, #ffffff, #e5e7eb) !important;
+  color: #374151 !important;
+  -webkit-text-fill-color: #374151 !important;
+  forced-color-adjust: none;
+  filter: none !important;
+}
+
+.kioskButton.primary,
+.kioskButton.primary:link,
+.kioskButton.primary:visited {
+  background: linear-gradient(135deg, #facc15, #f59e0b) !important;
+  color: #0f172a !important;
+  -webkit-text-fill-color: #0f172a !important;
+  forced-color-adjust: none;
+  filter: none !important;
+}
