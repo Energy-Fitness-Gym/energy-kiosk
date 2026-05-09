@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import campSchedule from "../data/campSchedule";
 import "./TypicalDay.css";
 
 function TypicalDay() {
+  const [openIndex, setOpenIndex] = useState(null);
+
   return (
     <main className="typicalDayPage">
       <header className="typicalDayHeader">
@@ -16,22 +19,38 @@ function TypicalDay() {
         </div>
 
         <div>
-          <p className="typicalDayEyebrow">Energy Summer Camp</p>
           <h1>Typical Camp Day</h1>
         </div>
       </header>
 
       <section className="schedulePanel" aria-label="Typical camp day schedule">
         <div className="scheduleTimeline">
-          {campSchedule.map((item) => (
-            <article className="scheduleCard" key={`${item.time}-${item.title}`}>
-              <div className="scheduleTime">{item.time}</div>
-              <div className="scheduleContent">
-                <h2>{item.title}</h2>
-                <p>{item.description}</p>
-              </div>
+          {campSchedule.map((item, index) => {
+            const isOpen = openIndex === index;
+            const detailsId = `schedule-details-${index}`;
+
+            return (
+              <article className={`scheduleCard ${isOpen ? "isOpen" : ""}`} key={`${item.time}-${item.title}`}>
+                <button
+                  className="scheduleToggle"
+                  type="button"
+                  aria-expanded={isOpen}
+                  aria-controls={detailsId}
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                >
+                  <span className="scheduleTime">{item.time}</span>
+                  <span className="scheduleTitle">{item.title}</span>
+                  <span className="scheduleChevron" aria-hidden="true">
+                    ›
+                  </span>
+                </button>
+
+                <div className="scheduleDetails" id={detailsId}>
+                  <p>{item.description}</p>
+                </div>
             </article>
-          ))}
+            );
+          })}
         </div>
       </section>
     </main>

@@ -8,11 +8,30 @@
   padding: var(--typical-pad-top) clamp(18px, 3dvw, 42px) var(--typical-pad-bottom);
   color: #0f172a;
   background:
-    radial-gradient(circle at top left, #b3d235, transparent 34%),
-    radial-gradient(circle at top right, #03a4e1, transparent 34%),
-    radial-gradient(circle at bottom left, #63c18b, transparent 34%),
-    radial-gradient(circle at bottom right, #0379c2, transparent 34%),
-    radial-gradient(circle at center, #ffffff 0%, #eef7f8 34%, transparent 62%);
+    radial-gradient(circle at top left,
+      rgba(179, 210, 53, 0.30) 0%,
+      transparent 58%),
+    radial-gradient(circle at top right,
+      rgba(3, 164, 225, 0.28) 0%,
+      transparent 58%),
+    radial-gradient(circle at bottom left,
+      rgba(99, 193, 139, 0.24) 0%,
+      transparent 62%),
+    radial-gradient(circle at bottom right,
+      rgba(3, 121, 194, 0.30) 0%,
+      transparent 62%),
+    radial-gradient(circle at center,
+      rgba(255,255,255,0.34) 0%,
+      rgba(255,255,255,0.18) 38%,
+      rgba(255,255,255,0.06) 62%,
+      transparent 82%),
+    linear-gradient(
+      135deg,
+      #71877d 0%,
+      #8fa4a3 38%,
+      #7f9cb2 68%,
+      #4b7394 100%
+    );
   display: flex;
   flex-direction: column;
 }
@@ -67,22 +86,43 @@
 
 .scheduleTimeline {
   height: 100%;
-  display: grid;
-  grid-template-rows: repeat(7, minmax(0, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: clamp(10px, 1.4dvh, 16px);
 }
 
 .scheduleCard {
-  display: grid;
-  grid-template-columns: minmax(92px, 0.22fr) 1fr;
-  align-items: center;
-  gap: clamp(14px, 2dvw, 24px);
   border-radius: clamp(18px, 2dvw, 26px);
   background: rgba(255, 255, 255, 0.7);
   box-shadow:
     0 14px 30px rgba(15, 23, 42, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.76);
+  overflow: hidden;
+  transition: background 0.18s ease, box-shadow 0.18s ease;
+}
+
+.scheduleCard.isOpen {
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow:
+    0 18px 38px rgba(15, 23, 42, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.84);
+}
+
+.scheduleToggle {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  min-height: clamp(68px, 8.6dvh, 92px);
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: minmax(92px, 0.22fr) 1fr auto;
+  align-items: center;
+  gap: clamp(14px, 2dvw, 24px);
   padding: clamp(12px, 1.6dvw, 20px);
+  text-align: left;
 }
 
 .scheduleTime {
@@ -92,22 +132,57 @@
   white-space: nowrap;
 }
 
-.scheduleContent {
+.scheduleTitle {
   min-width: 0;
-}
-
-.scheduleContent h2 {
   color: #1e3a5f;
   font-size: clamp(1.15rem, 2dvw, 1.75rem);
+  font-weight: 900;
   line-height: 1;
-  margin-bottom: 6px;
 }
 
-.scheduleContent p {
+.scheduleChevron {
+  width: clamp(32px, 4dvw, 44px);
+  height: clamp(32px, 4dvw, 44px);
+  border-radius: 999px;
+  background: rgba(3, 121, 194, 0.1);
+  color: #0379c2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1.8rem, 3dvw, 2.4rem);
+  font-weight: 500;
+  line-height: 1;
+  transform: rotate(0deg);
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.scheduleCard.isOpen .scheduleChevron {
+  background: rgba(3, 121, 194, 0.16);
+  transform: rotate(90deg);
+}
+
+.scheduleDetails {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.22s ease;
+}
+
+.scheduleCard.isOpen .scheduleDetails {
+  grid-template-rows: 1fr;
+}
+
+.scheduleDetails p {
+  min-height: 0;
+  overflow: hidden;
   color: #475569;
-  font-size: clamp(0.86rem, 1.25dvw, 1.08rem);
-  line-height: 1.28;
+  font-size: clamp(0.95rem, 1.35dvw, 1.16rem);
+  line-height: 1.35;
   font-weight: 650;
+  padding: 0 clamp(12px, 1.6dvw, 20px) 0 clamp(118px, 24%, 190px);
+}
+
+.scheduleCard.isOpen .scheduleDetails p {
+  padding-bottom: clamp(14px, 1.8dvh, 22px);
 }
 
 @media (max-width: 760px) {
@@ -126,12 +201,12 @@
     height: auto;
   }
 
-  .scheduleTimeline {
-    grid-template-rows: none;
-  }
-
-  .scheduleCard {
+  .scheduleToggle {
     grid-template-columns: 1fr;
     gap: 8px;
+  }
+
+  .scheduleDetails p {
+    padding-inline: clamp(12px, 1.6dvw, 20px);
   }
 }
