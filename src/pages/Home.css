@@ -81,3 +81,9 @@
   letter-spacing: 0.12em;
   opacity: 0.75;
 }
+
+.logo {
+  width: 180px;
+  height: auto;
+  margin-bottom: 20px;
+}
