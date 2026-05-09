@@ -10,7 +10,7 @@ function SummerCamp() {
         </Link>
 
         <div>
-          <h1>A fun, active day your child will love.</h1>
+          <h1>A fun, active day your child will love!</h1>
         </div>
       </header>
 
@@ -53,8 +53,11 @@ function SummerCamp() {
           </div>
 
           <div className="infoCard full">
-            <h2>Register</h2>
-            <p>Scan the QR code or ask the front desk for help signing up.</p>
+            <h2>How to Register</h2>
+            <h4>Pick up and complete a Summer Camp packet to register</h4>
+            <p style={{ fontWeight: 400, paddingTop: "6px" }}>
+              <em>**Some weeks fill faster than others.</em>
+            </p>
           </div>
         </div>
       </section>
