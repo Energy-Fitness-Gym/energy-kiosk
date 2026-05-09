@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import campFaqs from "../data/campFaqs";
+import campFaqs from "../data/campFaqs.jsx";
 import "./FAQ.css";
 
 function FAQ() {
@@ -36,7 +36,10 @@ function FAQ() {
         <h1>Summer Camp FAQs</h1>
       </header>
 
-      <section className="faqPanel" aria-label="Summer camp frequently asked questions">
+      <section
+        className="faqPanel"
+        aria-label="Summer camp frequently asked questions"
+      >
         <div className="faqList">
           {campFaqs.map((faq, index) => {
             const isOpen = openIndex === index;
@@ -63,9 +66,15 @@ function FAQ() {
                   </span>
                 </button>
 
-                <div className="faqAnswer" id={answerId}>
-                  <p>{faq.answer}</p>
-                </div>
+                {isOpen && (
+                  <div className="faqAnswer" id={answerId}>
+                    {typeof faq.answer === "string" ? (
+                      <p>{faq.answer}</p>
+                    ) : (
+                      faq.answer
+                    )}
+                  </div>
+                )}
               </article>
             );
           })}

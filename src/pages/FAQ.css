@@ -87,6 +87,7 @@
 .faqCard {
   flex: 0 0 auto;
   width: 100%;
+  align-items: flex-start;
   border-radius: clamp(18px, 2dvw, 26px);
   background: rgba(255, 255, 255, 0.7);
   box-shadow:
@@ -147,30 +148,36 @@
 }
 
 .faqAnswer {
-  display: grid;
-  grid-template-rows: 0fr;
-  opacity: 0;
-  transition: grid-template-rows 0.23s ease, opacity 0.2s ease;
-}
-
-.faqCard.isOpen .faqAnswer {
-  grid-template-rows: 1fr;
-  opacity: 1;
+  animation: faqAnswerIn 0.22s ease both;
 }
 
 .faqAnswer p {
-  min-height: 0;
-  overflow: hidden;
   color: #475569;
   font-size: clamp(0.98rem, 1.35dvw, 1.16rem);
   line-height: 1.35;
-  font-weight: 650;
+  font-weight: 400;
   margin: 0;
   padding: 0 clamp(11px, 1.4dvw, 17px);
 }
 
+.faqAnswer strong {
+  font-weight: 800;
+}
+
 .faqCard.isOpen .faqAnswer p {
   padding-bottom: clamp(12px, 1.5dvh, 18px);
+}
+
+@keyframes faqAnswerIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 760px) {
