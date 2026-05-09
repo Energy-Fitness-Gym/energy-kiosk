@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import SummerCamp from "./pages/SummerCamp";
 import TypicalDay from "./pages/TypicalDay";
+import WhatToBring from "./pages/WhatToBring";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/summercamp" element={<SummerCamp />} />
         <Route path="/typicalday" element={<TypicalDay />} />
+        <Route path="/whattobring" element={<WhatToBring />} />
       </Routes>
     </BrowserRouter>
   );

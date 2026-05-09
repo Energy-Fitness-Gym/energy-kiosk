@@ -34,7 +34,7 @@ function SummerCamp() {
         <div className="infoGrid">
           <Link to="/typicalday" className="infoCard infoCardLink">
             <h2>Typical Day</h2>
-            <p>See how the camp day is structured from drop-off to pick-up.</p>
+            <p>See what your child can expect during a typical day at camp.</p>
           </Link>
 
           <div className="infoCard">
@@ -42,10 +42,10 @@ function SummerCamp() {
             <p>Answers to common parent questions about camp.</p>
           </div>
 
-          <div className="infoCard">
+          <Link to="/whattobring" className="infoCard infoCardLink">
             <h2>What to Bring</h2>
             <p>Lunch, snack, water bottle, comfortable clothes, and more.</p>
-          </div>
+          </Link>
 
           <div className="infoCard">
             <h2>Ages & Hours</h2>

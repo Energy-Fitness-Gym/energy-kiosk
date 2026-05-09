@@ -1,0 +1,134 @@
+.whatToBringPage {
+  --bring-pad-top: clamp(14px, 2dvw, 26px);
+  --bring-pad-bottom: clamp(18px, 3dvw, 42px);
+  --bring-header-space: clamp(110px, 13dvh, 156px);
+
+  height: 100dvh;
+  overflow: hidden;
+  padding: var(--bring-pad-top) clamp(18px, 3dvw, 42px) var(--bring-pad-bottom);
+  color: #0f172a;
+  background:
+    radial-gradient(circle at top left,
+      rgba(179, 210, 53, 0.30) 0%,
+      transparent 58%),
+    radial-gradient(circle at top right,
+      rgba(3, 164, 225, 0.28) 0%,
+      transparent 58%),
+    radial-gradient(circle at bottom left,
+      rgba(99, 193, 139, 0.24) 0%,
+      transparent 62%),
+    radial-gradient(circle at bottom right,
+      rgba(3, 121, 194, 0.30) 0%,
+      transparent 62%),
+    radial-gradient(circle at center,
+      rgba(255,255,255,0.34) 0%,
+      rgba(255,255,255,0.18) 38%,
+      rgba(255,255,255,0.06) 62%,
+      transparent 82%),
+    linear-gradient(
+      135deg,
+      #71877d 0%,
+      #8fa4a3 38%,
+      #7f9cb2 68%,
+      #4b7394 100%
+    );
+  display: flex;
+  flex-direction: column;
+}
+
+.whatToBringHeader {
+  flex: 0 0 var(--bring-header-space);
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 3dvw, 34px);
+}
+
+.whatToBringNav {
+  display: flex;
+  gap: 12px;
+}
+
+.whatToBringButton {
+  background: rgba(255, 255, 255, 0.88);
+  color: #1e3a5f;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: clamp(0.9rem, 1.25dvw, 1.08rem);
+  padding: 12px 18px;
+  border-radius: 999px;
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.14);
+}
+
+.whatToBringHeader h1 {
+  font-size: clamp(2.4rem, 5dvw, 5rem);
+  line-height: 0.95;
+  color: #0f172a;
+}
+
+.bringGrid {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 3dvw, 34px);
+}
+
+.bringCard {
+  border-radius: clamp(28px, 3dvw, 40px);
+  background: rgba(255, 255, 255, 0.66);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.16);
+  padding: clamp(26px, 3.2dvw, 44px);
+}
+
+.bringCard h2 {
+  color: #1e3a5f;
+  font-size: clamp(1.7rem, 3dvw, 2.7rem);
+  line-height: 1;
+  margin-bottom: clamp(20px, 2.6dvh, 34px);
+}
+
+.bringCard ul {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 1.9dvh, 22px);
+  list-style: none;
+}
+
+.bringCard li {
+  position: relative;
+  color: #334155;
+  font-size: clamp(1.05rem, 1.6dvw, 1.4rem);
+  font-weight: 700;
+  line-height: 1.28;
+  padding-left: 1.25em;
+}
+
+.bringCard li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.48em;
+  width: 0.48em;
+  height: 0.48em;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #03a4e1, #0379c2);
+  box-shadow: 0 0 0 4px rgba(3, 164, 225, 0.12);
+}
+
+@media (max-width: 760px) {
+  .whatToBringPage {
+    height: auto;
+    min-height: 100dvh;
+    overflow: auto;
+  }
+
+  .whatToBringHeader {
+    min-height: var(--bring-header-space);
+    flex-wrap: wrap;
+  }
+
+  .bringGrid {
+    grid-template-columns: 1fr;
+  }
+}

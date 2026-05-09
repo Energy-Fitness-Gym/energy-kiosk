@@ -62,7 +62,7 @@ function TypicalDay() {
                   <span className="scheduleTime">{item.time}</span>
                   <span className="scheduleTitle">{item.title}</span>
                   <span className="scheduleChevron" aria-hidden="true">
-                    ›
+                    {isOpen ? "−" : "+"}
                   </span>
                 </button>
 

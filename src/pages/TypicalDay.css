@@ -146,24 +146,21 @@
 }
 
 .scheduleChevron {
-  width: clamp(28px, 3.2dvw, 38px);
-  height: clamp(28px, 3.2dvw, 38px);
-  border-radius: 999px;
-  background: rgba(3, 121, 194, 0.1);
+  width: clamp(24px, 2.6dvw, 34px);
+  height: clamp(24px, 2.6dvw, 34px);
   color: #0379c2;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: clamp(1.55rem, 2.5dvw, 2.05rem);
-  font-weight: 500;
+  font-size: clamp(1.45rem, 2.35dvw, 1.95rem);
+  font-weight: 300;
   line-height: 1;
   transform: rotate(0deg);
-  transition: transform 0.18s ease, background 0.18s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .scheduleCard.isOpen .scheduleChevron {
-  background: rgba(3, 121, 194, 0.16);
-  transform: rotate(90deg);
+  transform: rotate(180deg);
 }
 
 .scheduleDetails {
