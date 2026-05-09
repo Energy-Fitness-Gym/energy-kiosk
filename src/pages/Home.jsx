@@ -15,7 +15,7 @@ function Home() {
       </section>
 
       <section className="buttonLayout">
-        <button className="kioskButton" disabled>
+        <button className="kioskButton" type="button" aria-disabled="true" tabIndex="-1">
           <span>Gymnastics</span>
           <small>Coming Soon</small>
         </button>
@@ -24,7 +24,7 @@ function Home() {
           Summer Camp
         </Link>
 
-        <button className="kioskButton" disabled>
+        <button className="kioskButton" type="button" aria-disabled="true" tabIndex="-1">
           <span>Events</span>
           <small>Coming Soon</small>
         </button>
