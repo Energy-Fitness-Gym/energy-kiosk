@@ -37,6 +37,10 @@ function SummerCamp() {
           <p className="mediaCaption">
             See what a day at Energy Summer Camp looks like.
           </p>
+
+          <Link to="/camphighlights" className="campHighlightsButton">
+            View More Camp Highlights
+          </Link>
         </div>
 
         <div className="infoGrid">

@@ -1,0 +1,210 @@
+.campHighlightsPage {
+  --highlights-pad-top: clamp(14px, 2dvw, 26px);
+  --highlights-pad-bottom: clamp(18px, 3dvw, 42px);
+  --highlights-header-space: clamp(108px, 13dvh, 156px);
+
+  height: 100dvh;
+  overflow: hidden;
+  padding: var(--highlights-pad-top) clamp(18px, 3dvw, 42px) var(--highlights-pad-bottom);
+  color: #0f172a;
+  background:
+    radial-gradient(circle at top left,
+      rgba(179, 210, 53, 0.30) 0%,
+      transparent 58%),
+    radial-gradient(circle at top right,
+      rgba(3, 164, 225, 0.28) 0%,
+      transparent 58%),
+    radial-gradient(circle at bottom left,
+      rgba(99, 193, 139, 0.24) 0%,
+      transparent 62%),
+    radial-gradient(circle at bottom right,
+      rgba(3, 121, 194, 0.30) 0%,
+      transparent 62%),
+    radial-gradient(circle at center,
+      rgba(255,255,255,0.34) 0%,
+      rgba(255,255,255,0.18) 38%,
+      rgba(255,255,255,0.06) 62%,
+      transparent 82%),
+    linear-gradient(
+      135deg,
+      #71877d 0%,
+      #8fa4a3 38%,
+      #7f9cb2 68%,
+      #4b7394 100%
+    );
+  display: flex;
+  flex-direction: column;
+}
+
+.campHighlightsHeader {
+  flex: 0 0 var(--highlights-header-space);
+  display: grid;
+  grid-template-columns: minmax(120px, 1fr) auto minmax(120px, 1fr);
+  align-items: center;
+  gap: clamp(18px, 3dvw, 34px);
+}
+
+.campHighlightsButton {
+  background: rgba(255, 255, 255, 0.88);
+  color: #1e3a5f;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: clamp(0.9rem, 1.25dvw, 1.08rem);
+  padding: 12px 18px;
+  border-radius: 999px;
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.14);
+}
+
+.campHighlightsBackButton {
+  justify-self: start;
+}
+
+.campHighlightsHomeButton {
+  justify-self: end;
+}
+
+.campHighlightsTitle h1 {
+  font-size: clamp(2.4rem, 5dvw, 5rem);
+  line-height: 0.95;
+  color: #0f172a;
+  text-align: center;
+}
+
+.campHighlightsGallery {
+  min-height: 0;
+  height: calc(100dvh - var(--highlights-pad-top) - var(--highlights-pad-bottom) - var(--highlights-header-space));
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(min(82dvw, 960px), 1fr);
+  gap: clamp(18px, 3dvw, 34px);
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: clamp(8px, 1dvw, 12px) clamp(2px, 0.5dvw, 8px) clamp(14px, 1.8dvw, 22px);
+  scroll-snap-type: x mandatory;
+  scrollbar-gutter: stable;
+}
+
+.highlightCard {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: clamp(30px, 4dvw, 52px);
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 28px 70px rgba(15, 23, 42, 0.20);
+  scroll-snap-align: center;
+  backdrop-filter: blur(18px);
+}
+
+.highlightMedia {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(3, 164, 225, 0.28), rgba(179, 210, 53, 0.22)),
+    rgba(255, 255, 255, 0.32);
+}
+
+.highlightMedia::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, transparent 34%, rgba(8, 18, 32, 0.76) 100%),
+    radial-gradient(circle at 24% 20%, rgba(255, 255, 255, 0.26), transparent 28%);
+}
+
+.highlightMedia video,
+.highlightMedia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.highlightMedia video {
+  filter: saturate(0.95) brightness(0.82);
+}
+
+.highlightPlaceholder {
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.20), transparent 36%),
+    radial-gradient(circle at 22% 24%, rgba(255, 255, 255, 0.42), transparent 24%),
+    radial-gradient(circle at 76% 28%, rgba(179, 210, 53, 0.34), transparent 28%),
+    radial-gradient(circle at 42% 78%, rgba(3, 164, 225, 0.36), transparent 34%),
+    linear-gradient(135deg, #517a8f, #7aa599 48%, #a5bd7a);
+}
+
+.highlightMedia2 .highlightPlaceholder {
+  background:
+    radial-gradient(circle at 26% 30%, rgba(255, 255, 255, 0.42), transparent 22%),
+    radial-gradient(circle at 76% 68%, rgba(3, 164, 225, 0.38), transparent 30%),
+    linear-gradient(135deg, #596f82, #85a8a1 52%, #b3d235);
+}
+
+.highlightMedia3 .highlightPlaceholder {
+  background:
+    radial-gradient(circle at 68% 24%, rgba(255, 255, 255, 0.36), transparent 24%),
+    radial-gradient(circle at 28% 72%, rgba(179, 210, 53, 0.36), transparent 28%),
+    linear-gradient(135deg, #6c7f91, #8bb3ac 48%, #03a4e1);
+}
+
+.highlightMedia4 .highlightPlaceholder,
+.highlightMedia5 .highlightPlaceholder {
+  background:
+    radial-gradient(circle at 20% 26%, rgba(255, 255, 255, 0.42), transparent 24%),
+    radial-gradient(circle at 78% 72%, rgba(179, 210, 53, 0.32), transparent 30%),
+    linear-gradient(135deg, #4b7394, #8fa4a3 48%, #63c18b);
+}
+
+.highlightCaption {
+  position: absolute;
+  left: clamp(24px, 4dvw, 54px);
+  right: clamp(24px, 4dvw, 54px);
+  bottom: clamp(22px, 4dvh, 52px);
+  color: white;
+  text-shadow: 0 16px 44px rgba(0, 0, 0, 0.48);
+}
+
+.highlightCaption span {
+  display: inline-flex;
+  margin-bottom: clamp(10px, 1.4dvh, 16px);
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  backdrop-filter: blur(16px);
+  font-size: clamp(0.82rem, 1.1dvw, 0.96rem);
+  font-weight: 900;
+}
+
+.highlightCaption h2 {
+  font-size: clamp(2rem, 4.2dvw, 4.4rem);
+  line-height: 0.96;
+}
+
+.highlightCaption p {
+  max-width: 760px;
+  margin-top: clamp(10px, 1.6dvh, 18px);
+  font-size: clamp(1.02rem, 1.55dvw, 1.34rem);
+  font-weight: 750;
+  line-height: 1.25;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+@media (max-width: 760px) {
+  .campHighlightsHeader {
+    grid-template-columns: auto 1fr auto;
+    gap: 12px;
+  }
+
+  .campHighlightsTitle h1 {
+    font-size: clamp(1.85rem, 8dvw, 3rem);
+  }
+
+  .campHighlightsGallery {
+    grid-auto-columns: minmax(82dvw, 1fr);
+  }
+}

@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
+import CampHighlights from "./pages/CampHighlights";
 import FAQ from "./pages/FAQ";
 import Screensaver from "./pages/Screensaver";
 import SummerCamp from "./pages/SummerCamp";
@@ -13,6 +14,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/camphighlights" element={<CampHighlights />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/screensaver" element={<Screensaver />} />
         <Route path="/summercamp" element={<SummerCamp />} />

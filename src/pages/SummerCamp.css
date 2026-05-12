@@ -143,6 +143,26 @@
   text-align: center;
 }
 
+.campHighlightsButton {
+  width: fit-content;
+  max-width: min(100%, calc(60dvh * 9 / 16));
+  margin-top: clamp(12px, 1.8dvh, 18px);
+  padding: clamp(10px, 1.2dvw, 14px) clamp(13px, 1.45dvw, 18px);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  box-shadow:
+    0 12px 26px rgba(15, 23, 42, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  color: #1e3a5f;
+  text-align: center;
+  text-decoration: none;
+  font-size: clamp(0.9rem, 1.15dvw, 1.02rem);
+  font-weight: 900;
+  white-space: nowrap;
+  backdrop-filter: blur(18px);
+}
+
 .infoGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
