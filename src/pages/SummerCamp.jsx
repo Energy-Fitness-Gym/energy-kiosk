@@ -55,10 +55,12 @@ function SummerCamp() {
             <p>Click to see what campers should bring daily.</p>
           </Link>
 
-          <div className="infoCard">
-            <h2>TBD</h2>
-            <p>TBD</p>
-          </div>
+          <Link to="/popularweeks" className="infoCard infoCardLink">
+            <h2>Popular Weeks</h2>
+            <p>
+              See which camp weeks that have historically filled the quickest.
+            </p>
+          </Link>
 
           <div className="infoCard full">
             <h2>How to Register</h2>
